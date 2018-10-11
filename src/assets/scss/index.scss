@@ -1,1 +1,10 @@
 // Import your SCSS files here
+@import './vendor/index.scss';
+
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 20px;
+  text-align: center;
+}
