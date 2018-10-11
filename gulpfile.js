@@ -2,7 +2,7 @@ const gulp = require('gulp')
 const sass = require('gulp-sass')
 const concat = require('gulp-concat')
 
-gulp.task('default', ['html', 'scss'])
+gulp.task('default', ['html', 'scss', 'js'])
 
 gulp.task('html', () => {
   return gulp.src('src/**/*.html')
@@ -21,4 +21,16 @@ gulp.task('scss-vendor', () => {
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('vendor.css'))
     .pipe(gulp.dest('build/assets/css'))
+})
+
+gulp.task('js', ['js-vendor'], () => {
+  return gulp.src('src/assets/js/*.js')
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('build/assets/js'))
+})
+
+gulp.task('js-vendor', () => {
+  return gulp.src('src/assets/js/vendor/**/*.js')
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('build/assets/js'))
 })
