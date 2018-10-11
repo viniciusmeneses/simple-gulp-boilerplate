@@ -1,5 +1,4 @@
 const gulp = require('gulp')
-const sass = require('gulp-sass')
 const concat = require('gulp-concat')
 const env = require('gulp-environment')
 const webserver = require('gulp-webserver')
@@ -8,6 +7,9 @@ const watch = require('gulp-watch')
 const cleancss = require('gulp-clean-css')
 const htmlmin = require('gulp-htmlmin')
 const imagemin = require('gulp-imagemin')
+
+const babel = require('gulp-babel')
+const sass = require('gulp-sass')
 
 gulp.task('default', ['html', 'scss', 'js', 'img'], () => {
   if (env.is.development()) {
@@ -41,6 +43,9 @@ gulp.task('scss-vendor', () => {
 
 gulp.task('js', ['js-vendor'], () => {
   return gulp.src('src/assets/js/*.js')
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
     .pipe(concat('main.js'))
     .pipe(gulp.dest('dist/assets/js'))
 })
@@ -48,6 +53,9 @@ gulp.task('js', ['js-vendor'], () => {
 gulp.task('js-vendor', () => {
   return gulp.src('src/assets/js/vendor/**/*.js')
     .pipe(concat('vendor.js'))
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
     .pipe(gulp.dest('dist/assets/js'))
 })
 
