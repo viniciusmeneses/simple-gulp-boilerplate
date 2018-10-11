@@ -7,6 +7,7 @@ const watch = require('gulp-watch')
 
 const cleancss = require('gulp-clean-css')
 const htmlmin = require('gulp-htmlmin')
+const imagemin = require('gulp-imagemin')
 
 gulp.task('default', ['html', 'scss', 'js', 'img'], () => {
   if (env.is.development()) {
@@ -52,7 +53,8 @@ gulp.task('js-vendor', () => {
 
 gulp.task('img', () => {
   return gulp.src('src/assets/img/**/*.*')
-  .pipe(gulp.dest('dist/assets/img'))
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/assets/img'))
 })
 
 gulp.task('server', ['watch'], () => {
