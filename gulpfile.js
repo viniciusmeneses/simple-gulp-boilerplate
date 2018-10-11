@@ -12,6 +12,8 @@ const imagemin = require('gulp-imagemin')
 const babel = require('gulp-babel')
 const sass = require('gulp-sass')
 
+const htmlhint = require("gulp-htmlhint")
+
 gulp.task('default', ['html', 'scss', 'js', 'img'], () => {
   if (env.is.development()) {
     gulp.start('server')
@@ -23,6 +25,8 @@ gulp.task('html', () => {
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
+    .pipe(htmlhint())
+    .pipe(htmlhint.failAfterError())
     .pipe(gulp.dest('dist'))
 })
 
@@ -78,6 +82,7 @@ gulp.task('server', ['watch'], () => {
       open: true
     }))
 })
+
 
 gulp.task('watch', () => {
   watch('src/**/*.html', () => gulp.start('html'))
