@@ -1,12 +1,12 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const concat = require('gulp-concat')
-const util = require('gulp-util')
+const env = require('gulp-environment')
 const webserver = require('gulp-webserver')
 const watch = require('gulp-watch')
 
 gulp.task('default', ['html', 'scss', 'js', 'img'], () => {
-  if (util.env.dev) {
+  if (env.is.development()) {
     gulp.start('server')
   }
 })
