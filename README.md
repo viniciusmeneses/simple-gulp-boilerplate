@@ -2,9 +2,7 @@
 
 > A Simple Gulp Boilerplate to easily get started with your project without any configuration.
 
-
-
-### Features
+#### Features
 
 - Minifies HTML, CSS and JS
 
@@ -20,8 +18,9 @@
 
 - Includes [Bootstrap](http://getbootstrap.com/), [jQuery](https://jquery.com/), [Modenizr](https://modernizr.com/) and [normalize.css](https://github.com/necolas/normalize.css) ready-to-use
 
-- Includes HTML and JS linter
+- Includes HTML linter - [htmllint](https://github.com/htmllint/htmllint/)
 
+- Includes JS linter - [JSHint](https://github.com/jshint/jshint)
 
 ## Using
 
