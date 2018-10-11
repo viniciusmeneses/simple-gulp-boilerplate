@@ -28,7 +28,7 @@ gulp.task('html', () => {
 gulp.task('scss', ['scss-vendor'], () => {
   return gulp.src('src/assets/scss/index.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(concat('style.css'))
+    .pipe(concat('style.min.css'))
     .pipe(cleancss())
     .pipe(gulp.dest('dist/assets/css'))
 })
@@ -36,7 +36,7 @@ gulp.task('scss', ['scss-vendor'], () => {
 gulp.task('scss-vendor', () => {
   return gulp.src('src/assets/scss/vendor/index.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(concat('vendor.css'))
+    .pipe(concat('vendor.min.css'))
     .pipe(cleancss())
     .pipe(gulp.dest('dist/assets/css'))
 })
@@ -46,16 +46,16 @@ gulp.task('js', ['js-vendor'], () => {
     .pipe(babel({
       presets: ['@babel/env']
     }))
-    .pipe(concat('main.js'))
+    .pipe(concat('main.min.js'))
     .pipe(gulp.dest('dist/assets/js'))
 })
 
 gulp.task('js-vendor', () => {
   return gulp.src('src/assets/js/vendor/**/*.js')
-    .pipe(concat('vendor.js'))
     .pipe(babel({
       presets: ['@babel/env']
     }))
+    .pipe(concat('vendor.min.js'))
     .pipe(gulp.dest('dist/assets/js'))
 })
 
