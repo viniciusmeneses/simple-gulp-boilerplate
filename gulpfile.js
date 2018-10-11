@@ -1,8 +1,15 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const concat = require('gulp-concat')
+const util = require('gulp-util')
+const webserver = require('gulp-webserver')
+const watch = require('gulp-watch')
 
-gulp.task('default', ['html', 'scss', 'js', 'img'])
+gulp.task('default', ['html', 'scss', 'js', 'img'], () => {
+  if (util.env.dev) {
+    gulp.start('server')
+  }
+})
 
 gulp.task('html', () => {
   return gulp.src('src/**/*.html')
@@ -38,4 +45,20 @@ gulp.task('js-vendor', () => {
 gulp.task('img', () => {
   return gulp.src('src/assets/img/**/*.*')
   .pipe(gulp.dest('build/assets/img'))
+})
+
+gulp.task('server', ['watch'], () => {
+  return gulp.src('build')
+    .pipe(webserver({
+      livereload: true,
+      port: 8080,
+      open: true
+    }))
+})
+
+gulp.task('watch', () => {
+  watch(['src/**/*.html'], () => gulp.start('html'))
+  watch('src/assets/scss/**/*.scss', () => gulp.start('scss'))
+  watch('src/assets/js/**/*.js', () => gulp.start('js'))
+  watch('src/assets/imgs/**/*.*', () => gulp.start('img'))
 })
