@@ -3,6 +3,7 @@ const concat = require('gulp-concat')
 const env = require('gulp-environment')
 const webserver = require('gulp-webserver')
 const watch = require('gulp-watch')
+const rename = require('gulp-rename')
 
 const cleancss = require('gulp-clean-css')
 const htmlmin = require('gulp-htmlmin')
@@ -46,7 +47,9 @@ gulp.task('js', ['js-vendor'], () => {
     .pipe(babel({
       presets: ['@babel/env']
     }))
-    .pipe(concat('main.min.js'))
+    .pipe(rename((path) => {
+      path.basename += '.min'
+    }))
     .pipe(gulp.dest('dist/assets/js'))
 })
 
