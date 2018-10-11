@@ -12,6 +12,7 @@ const imagemin = require('gulp-imagemin')
 const babel = require('gulp-babel')
 const sass = require('gulp-sass')
 
+const jshint = require('gulp-jshint');
 const htmlhint = require("gulp-htmlhint")
 
 gulp.task('default', ['html', 'scss', 'js', 'img'], () => {
@@ -54,6 +55,9 @@ gulp.task('js', ['js-vendor'], () => {
     .pipe(rename((path) => {
       path.basename += '.min'
     }))
+    .pipe(jshint())
+    .pipe(jshint.reporter('default', { verbose: true }))
+    .pipe(jshint.reporter('fail'))
     .pipe(gulp.dest('dist/assets/js'))
 })
 
