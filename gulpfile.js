@@ -12,6 +12,9 @@ const imagemin = require('gulp-imagemin')
 const babel = require('gulp-babel')
 const sass = require('gulp-sass')
 
+const uglify = require('gulp-uglify');
+const pump = require('pump');
+
 gulp.task('default', ['html', 'scss', 'js', 'img'], () => {
   if (env.is.development()) {
     gulp.start('server')
@@ -61,6 +64,16 @@ gulp.task('js-vendor', () => {
     .pipe(concat('vendor.min.js'))
     .pipe(gulp.dest('dist/assets/js'))
 })
+
+gulp.task('compress', function (cb) {
+  pump([
+        gulp.src('src/assets/js/*.js'),
+        uglify(),
+        gulp.dest('dist')
+    ],
+    cb
+  );
+});
 
 gulp.task('img', () => {
   return gulp.src('src/assets/img/**/*.*')
