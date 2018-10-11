@@ -4,7 +4,7 @@
 
 
 
-## Features
+### Features
 
 - Minifies HTML, CSS and JS
 
@@ -22,7 +22,7 @@
 
 
 
-## Using
+### Using
 
 First of all, you need to clone or download this repository.
 
