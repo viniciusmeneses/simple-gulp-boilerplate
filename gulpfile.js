@@ -49,15 +49,15 @@ gulp.task('scss-vendor', () => {
 
 gulp.task('js', ['js-vendor'], () => {
   return gulp.src('src/assets/js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default', { verbose: true }))
+    .pipe(jshint.reporter('fail'))
     .pipe(babel({
       presets: ['@babel/env']
     }))
     .pipe(rename((path) => {
       path.basename += '.min'
     }))
-    .pipe(jshint())
-    .pipe(jshint.reporter('default', { verbose: true }))
-    .pipe(jshint.reporter('fail'))
     .pipe(gulp.dest('dist/assets/js'))
 })
 

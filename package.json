@@ -36,6 +36,5 @@
     "jshint": "^2.9.6",
     "lodash": "^4.17.11",
     "minimatch": "^3.0.4"
-  },
-  "dependencies": {}
+  }
 }
