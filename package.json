@@ -1,0 +1,17 @@
+{
+  "name": "simple-gulp-boilerplate",
+  "version": "1.0.0",
+  "description": "A simple Gulp Boilerplate to get started without any configuration!",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vini23hot/simple-gulp-boilerplate.git"
+  },
+  "author": "Vinicius Meneses <vini23hot@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vini23hot/simple-gulp-boilerplate/issues"
+  },
+  "homepage": "https://github.com/vini23hot/simple-gulp-boilerplate#readme"
+}
