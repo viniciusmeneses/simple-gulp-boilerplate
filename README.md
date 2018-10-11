@@ -18,11 +18,12 @@
 
 - Uses the base of [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate)
 
-- Includes [jQuery](https://jquery.com/), [Modenizr](https://modernizr.com/) and [normalize.css](https://github.com/necolas/normalize.css) ready-to-use
+- Includes [Bootstrap](http://getbootstrap.com/), [jQuery](https://jquery.com/), [Modenizr](https://modernizr.com/) and [normalize.css](https://github.com/necolas/normalize.css) ready-to-use
+
+- Includes HTML and JS linter
 
 
-
-### Using
+## Using
 
 First of all, you need to clone or download this repository.
 
@@ -50,7 +51,4 @@ npm run dev
 
 // Run Gulp tasks only
 npm run build
-
 ```
-
-
