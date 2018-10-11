@@ -8,6 +8,7 @@ const rename = require('gulp-rename')
 const cleancss = require('gulp-clean-css')
 const htmlmin = require('gulp-htmlmin')
 const imagemin = require('gulp-imagemin')
+const uglify = require('gulp-uglify')
 
 const babel = require('gulp-babel')
 const sass = require('gulp-sass')
@@ -59,6 +60,7 @@ gulp.task('js-vendor', () => {
       presets: ['@babel/env']
     }))
     .pipe(concat('vendor.min.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('dist/assets/js'))
 })
 
