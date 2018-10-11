@@ -34,5 +34,7 @@
     "lodash": "^4.17.11",
     "minimatch": "^3.0.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  }
 }
