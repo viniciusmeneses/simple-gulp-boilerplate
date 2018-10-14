@@ -92,5 +92,5 @@ gulp.task('watch', () => {
   watch('src/**/*.html', () => gulp.start('html'))
   watch('src/assets/scss/**/*.scss', () => gulp.start('scss'))
   watch('src/assets/js/**/*.js', () => gulp.start('js'))
-  watch('src/assets/imgs/**/*.*', () => gulp.start('img'))
+  watch('src/assets/img/**/*.*', () => gulp.start('img'))
 })
