@@ -27,7 +27,7 @@
 First of all, you need to clone or download this repository.
 
 ```
-git clone https://github.com/vini23hot/simple-gulp-boilerplate.git`
+git clone https://github.com/vini23hot/simple-gulp-boilerplate.git
 ```
 
 Install Gulp globally. If you already have Gulp installed, skip this line.
@@ -39,7 +39,7 @@ npm install -g gulp
 Go to the **simple-gulp-boilerplate** folder and install the dependencies
 
 ```
-`npm install`
+npm install
 ```
 
 Modify the files inside `src` folder and run:
