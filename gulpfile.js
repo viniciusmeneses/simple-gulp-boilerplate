@@ -4,6 +4,7 @@ const env = require('gulp-environment')
 const webserver = require('gulp-webserver')
 const watch = require('gulp-watch')
 const rename = require('gulp-rename')
+const wait = require('gulp-wait')
 
 const cleancss = require('gulp-clean-css')
 const htmlmin = require('gulp-htmlmin')
@@ -33,6 +34,7 @@ gulp.task('html', () => {
 
 gulp.task('scss', ['scss-vendor'], () => {
   return gulp.src('src/assets/scss/index.scss')
+    .pipe(wait(500))
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('style.min.css'))
     .pipe(cleancss())
@@ -41,6 +43,7 @@ gulp.task('scss', ['scss-vendor'], () => {
 
 gulp.task('scss-vendor', () => {
   return gulp.src('src/assets/scss/vendor/index.scss')
+    .pipe(wait(500))
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('vendor.min.css'))
     .pipe(cleancss())
