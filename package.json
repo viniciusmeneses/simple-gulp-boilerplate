@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vini23hot/simple-gulp-boilerplate.git"
+    "url": "git+https://github.com/viniciusmeneses/simple-gulp-boilerplate.git"
   },
   "author": "Vinicius Meneses <vini23hot@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vini23hot/simple-gulp-boilerplate/issues"
+    "url": "https://github.com/viniciusmeneses/simple-gulp-boilerplate/issues"
   },
-  "homepage": "https://github.com/vini23hot/simple-gulp-boilerplate#readme",
+  "homepage": "https://github.com/viniciusmeneses/simple-gulp-boilerplate#readme",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
