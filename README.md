@@ -1,6 +1,6 @@
 # Simple Gulp Boilerplate
 
-> A Simple Gulp Boilerplate to easily get started with your project without any configuration.
+> A Gulp boilerplate to easily get started with your project without any configuration.
 
 #### Features
 
